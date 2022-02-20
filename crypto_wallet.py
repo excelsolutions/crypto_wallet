@@ -296,7 +296,7 @@ class MainApplication(tk.Frame):
 
 
     def kurs(self, para):
-        url = "https://api.bitbay.net/rest/trading/ticker/" + para
+        url = "https://api.zonda.exchange/rest/trading/ticker/" + para
         headers = {'content-type': 'application/json'}
         response = requests.request("GET", url, headers=headers)
         return json.loads(response.text)["ticker"]["rate"]
