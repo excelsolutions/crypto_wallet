@@ -4,7 +4,6 @@
 # 2021-11-11 Add charts, add try, except
 # 2021-11-05 Changed MANA
 import requests
-import json
 from tkinter import messagebox as mbox
 import tkinter as tk  # link: https://stackoverflow.com/questions/17466561/best-way-to-strucd yhn6ture-a-tkinter-application
 import tkinter.ttk as ttk
@@ -314,6 +313,8 @@ class MainApplication(tk.Frame):
         headers = {'content-type': 'application/json'}
         response = requests.request("GET", url, headers=headers)
         return json.loads(response.text)["rates"][0]["mid"]
+
+
 
 
 if __name__ == '__main__':
