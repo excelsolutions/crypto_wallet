@@ -90,7 +90,7 @@ class MainApplication(tk.Frame):
         self.lbl_waluta_header.grid(row=0, column=2, sticky='E', padx=padx, pady=pady)
         self.lbl_kwota_konw_header = tk.Label(self.frame_finanse, text="Kwota", bg='white', width=10, font=font, name="lbl_kwota_konw_header")
         self.lbl_kwota_konw_header.grid(row=0, column=3, sticky='E', padx=padx, pady=pady)
-        self.lbl_kwota_rze_header = tk.Label(self.frame_finanse, text="Inwestycja", bg='white', width=10, font=font, name="lbl_kwota_rze_header")
+        self.lbl_kwota_rze_header = tk.Label(self.frame_finanse, text="Bilans", bg='white', width=10, font=font, name="lbl_kwota_rze_header")
         self.lbl_kwota_rze_header.grid(row=0, column=4, sticky='E', padx=padx, pady=pady)
         self.lbl_kwota_zysk_header = tk.Label(self.frame_finanse, text="Zysk/strata.", bg='white', width=10, font=font, name="lbl_kwota_zysk_header")
         self.lbl_kwota_zysk_header.grid(row=0, column=5, sticky='E', padx=padx, pady=pady)
@@ -101,20 +101,20 @@ class MainApplication(tk.Frame):
         wal = 'BTC'
         a = excel_data.where(excel_data == 'XRP').dropna(how='all').dropna(axis=1)
         # print(excel_data.loc[a.index[0], 'BITBAY'])
-        print(excel_data.loc[excel_data.where(excel_data == 'BTC').dropna(how='all').dropna(axis=1).index[0], 'BITBAY'])
+        print(excel_data.loc[excel_data.where(excel_data == 'BTC').dropna(how='all').dropna(axis=1).index[0], 'ZONDA'])
         # print(excel_data.loc['BTC', 'KRYPTOWALUTY'])
         ilosc_BTC = round(excel_data.loc[excel_data.where(excel_data == 'BTC').dropna(how='all').dropna(axis=1).index[0], 'Revolut'],8)
-        ilosc_XRP = round(excel_data.loc[excel_data.where(excel_data == 'XRP').dropna(how='all').dropna(axis=1).index[0], 'BITBAY'],8)
+        ilosc_XRP = round(excel_data.loc[excel_data.where(excel_data == 'XRP').dropna(how='all').dropna(axis=1).index[0], 'ZONDA'],8)
         ilosc_XLM =  round(excel_data.loc[excel_data.where(excel_data == 'XLM').dropna(how='all').dropna(axis=1).index[0], 'Revolut'],8)
         ilosc_ETH =  round(excel_data.loc[excel_data.where(excel_data == 'ETH').dropna(how='all').dropna(axis=1).index[0], 'Revolut'],8)
         ilosc_DOGE = round(excel_data.loc[excel_data.where(excel_data == 'DOGE').dropna(how='all').dropna(axis=1).index[0], 'BINANCE'],8)
-        ilosc_ALG = round(excel_data.loc[excel_data.where(excel_data == 'ALG').dropna(how='all').dropna(axis=1).index[0], 'BITBAY'],8)
-        ilosc_AMLT = round(excel_data.loc[excel_data.where(excel_data == 'AMLT').dropna(how='all').dropna(axis=1).index[0], 'BITBAY'],8)
-        ilosc_BOB = round(excel_data.loc[excel_data.where(excel_data == 'BOB').dropna(how='all').dropna(axis=1).index[0], 'BITBAY'],8)
-        ilosc_LML = round(excel_data.loc[excel_data.where(excel_data == 'LML').dropna(how='all').dropna(axis=1).index[0], 'BITBAY'],8)
-        ilosc_MANA = round(excel_data.loc[excel_data.where(excel_data == 'MANA').dropna(how='all').dropna(axis=1).index[0], 'BITBAY'],8)
-        ilosc_XIN = round(excel_data.loc[excel_data.where(excel_data == 'XIN').dropna(how='all').dropna(axis=1).index[0], 'BITBAY'],8)
-        ilosc_NEU = round(excel_data.loc[excel_data.where(excel_data == 'NEU').dropna(how='all').dropna(axis=1).index[0], 'BITBAY'],8)
+        ilosc_ALG = round(excel_data.loc[excel_data.where(excel_data == 'ALG').dropna(how='all').dropna(axis=1).index[0], 'ZONDA'],8)
+        ilosc_AMLT = round(excel_data.loc[excel_data.where(excel_data == 'AMLT').dropna(how='all').dropna(axis=1).index[0], 'ZONDA'],8)
+        ilosc_BOB = round(excel_data.loc[excel_data.where(excel_data == 'BOB').dropna(how='all').dropna(axis=1).index[0], 'ZONDA'],8)
+        ilosc_LML = round(excel_data.loc[excel_data.where(excel_data == 'LML').dropna(how='all').dropna(axis=1).index[0], 'ZONDA'],8)
+        ilosc_MANA = round(excel_data.loc[excel_data.where(excel_data == 'MANA').dropna(how='all').dropna(axis=1).index[0], 'ZONDA'],8)
+        ilosc_XIN = round(excel_data.loc[excel_data.where(excel_data == 'XIN').dropna(how='all').dropna(axis=1).index[0], 'ZONDA'],8)
+        ilosc_NEU = round(excel_data.loc[excel_data.where(excel_data == 'NEU').dropna(how='all').dropna(axis=1).index[0], 'ZONDA'],8)
         ilosc_SHIB = round(excel_data.loc[excel_data.where(excel_data == 'SHIB').dropna(how='all').dropna(axis=1).index[0], 'BINANCE'],8)
         ilosc_LRC = round(excel_data.loc[excel_data.where(excel_data == 'LRC').dropna(how='all').dropna(axis=1).index[0], 'Revolut'],8)
         ilosc_YFI = round(excel_data.loc[excel_data.where(excel_data == 'YFI').dropna(how='all').dropna(axis=1).index[0], 'Revolut'],8)
@@ -144,6 +144,7 @@ class MainApplication(tk.Frame):
         ilosc_inw_USDT = round(excel_data.loc[excel_data.where(excel_data == 'USDT').dropna(how='all').dropna(axis=1).index[0], 'RAZEM'],8)
         ilosc_inw_EUR = round(excel_data.loc[excel_data.where(excel_data == 'EUR').dropna(how='all').dropna(axis=1).index[0], 'RAZEM'],8)
         suma = 0
+        suma_zysk = 0
         def draw_chart(self):
             currency = (str(self.widget).split(".")[-1])[8:]
             names = ['group_a', 'group_b', 'group_c']
@@ -155,6 +156,7 @@ class MainApplication(tk.Frame):
         def tworz_lbl_finanse(self, waluta, wiersz):
             """Procedura do tworzenia lbl w cz. finansowej"""
             nonlocal suma
+            nonlocal suma_zysk
             ilosc_waluty = 0
             ilosc_akt_pln = 0
             if waluta == "BTC":
@@ -235,7 +237,8 @@ class MainApplication(tk.Frame):
             else:
                 kwota_konw = "{:.2f}".format(ilosc_waluty * float(MainApplication.kurs(self, waluta + "-PLN")))
 
-            zysk_strata = "{:.2f}".format( float(kwota_konw) - float(ilosc_akt_pln) )
+            zysk_strata = "{:.2f}".format( float(kwota_konw) + float(ilosc_akt_pln) )
+            suma_zysk = suma_zysk + float(zysk_strata)
             self.lbl_ilosc = tk.Label(self.frame_finanse, text=ilosc_waluty, bg='white', width=12, name="lbl_ilosc"+str(wiersz), font=font)
             self.lbl_ilosc.grid(row=wiersz, column=1, sticky='W', padx=padx, pady=pady)
             self.lbl_waluta = tk.Label(self.frame_finanse, text=waluta, bg='white', width=5, name="lbl_waluta"+str(wiersz), font=font)
@@ -269,10 +272,11 @@ class MainApplication(tk.Frame):
         tworz_lbl_finanse(self, "YFI", 15)
         tworz_lbl_finanse(self, "OXT", 16)
         tworz_lbl_finanse(self, "FTM", 17)
-        tworz_lbl_finanse(self, "EUR", 17)
-        lbl_podsuma = tk.Label(root, font=(None, 12), text=suma)
-        lbl_podsuma.pack()
-
+        # tworz_lbl_finanse(self, "EUR", 18)
+        lbl_podsuma = tk.Label(root, font=(None, 12), text='Aktywa: ' + str(round(suma,2)))
+        lbl_podsuma.pack(side="left")
+        lbl_podsuma_zysk = tk.Label(root, font=(None, 12), text=', Zysk: ' + str(round(suma_zysk, 2)))
+        lbl_podsuma_zysk.pack(side="left")
 
         def wypisz_wszystkie_widgety(self, frame):
             for widg in frame.winfo_children():
